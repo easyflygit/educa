@@ -39,7 +39,7 @@ class Course(models.Model):
 
 
 class Module(models.Model):
-    """Класс для модулей"""
+    """Класс для модулей курса"""
     course = models.ForeignKey(Course,
                                related_name='modules',
                                on_delete=models.CASCADE)
@@ -55,7 +55,7 @@ class Module(models.Model):
 
 
 class Content(models.Model):
-    """Класс для контента"""
+    """Класс для контента модуля"""
     module = models.ForeignKey(Module,
                                related_name='contents',
                                on_delete=models.CASCADE)
